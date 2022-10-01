@@ -13,7 +13,7 @@ class AVLTree {
 
 	Node root;
 
-	// A utility function to get the height of the tree
+	// A utility function to get the height of a tree
 	int height(Node N) {
 		if (N == null)
 			return 0;
@@ -26,7 +26,7 @@ class AVLTree {
 		return (a > b) ? a : b;
 	}
 
-	// A utility function to right rotate subtree rooted with y
+	// A utility function to right rotate the subtree rooted with y
 	// See the diagram given above.
 	Node rightRotate(Node y) {
 		Node x = y.left;
@@ -36,7 +36,7 @@ class AVLTree {
 		x.right = y;
 		y.left = T2;
 
-		// Update heights
+		// Update both heights
 		y.height = max(height(y.left), height(y.right)) + 1;
 		x.height = max(height(x.left), height(x.right)) + 1;
 
@@ -45,7 +45,7 @@ class AVLTree {
 	}
 
 	// A utility function to left rotate subtree rooted with x
-	// See the diagram given above.
+	// Refer the diagram given above.
 	Node leftRotate(Node x) {
 		Node y = x.right;
 		Node T2 = y.left;
@@ -151,4 +151,4 @@ class AVLTree {
 		tree.preOrder(tree.root);
 	}
 }
-// This code has been contributed by Mayank Jaiswal
+// This code has been updated by batrakeshav10
