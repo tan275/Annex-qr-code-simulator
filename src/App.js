@@ -129,7 +129,7 @@ const generateqr=()=>{
 
           <div className="flex justify-center item-center mt-10 ">
 
-<h1 className="text-xl font-medium ">scan result is = <span className="text-2xl font-semibold text-green-500">{data}</span> </h1>
+<h1 className="text-xl font-medium ">scan result is = <a href={data}><span className="text-2xl font-semibold text-green-500">{data}</span> </a></h1>
 
           </div>
 
