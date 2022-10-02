@@ -1,0 +1,38 @@
+package Sorting;
+
+public class binarysearch {
+
+    public int binarmethod(int a[],int l,int h,int key) {
+        int mid = (l + h) / 2;
+
+        if (a[mid] == key) {
+            return mid;
+        }
+        else if (a[mid] > key) {
+            return binarmethod(a, l, mid + 1, key);
+        }
+        else if (a[mid] < key) {
+            return binarmethod(a, mid + 1, h, key);
+        }
+        return 0;
+
+    }
+
+    public static void main(String args[])
+    {
+        int a[]={10,20,30,40,50,60,70};
+        int n=a.length;
+
+        binarysearch data=new binarysearch();
+        int low=0;
+        int high=n;
+        int key=30;
+        long e=System.nanoTime();
+        int ans=data.binarmethod(a,low,high,key);
+        System.out.println(ans);
+        long s=System.nanoTime();
+        System.out.println("to take the total time is the "+(s-e));
+
+    }
+
+}
