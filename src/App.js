@@ -115,7 +115,7 @@ const generateqr=()=>{
     <div className="flex justify-center item-center mt-10 ">
  
  <QrReader
-   className="border-4 border-red-500 shadow-lg  rounded-md w-80"
+   className="border-4 border-red-500 shadow-lg rounded-md w-80"
           delay={300}
           facingMode={setSelected}
          // style={{width:"300px"}}
