@@ -102,10 +102,10 @@ const generateqr=()=>{
  <div className="box px-3 py-1 bg-sky-400 rounded-lg mr-10 font-semibold text-xl shadow-lg  shadow hover:shadow-xl">
     <button  onClick={()=>setstart(true)}>scan now</button> 
  </div>
-<div className="box px-3 py-1 bg-sky-400 rounded-lg font-semibold text-xl shadow-lg shadow hover:shadow-xl">
+{start && <div className="box px-3 py-1 bg-sky-400 rounded-lg font-semibold text-xl shadow-lg shadow hover:shadow-xl">
     <button onClick={()=>{setstart(false)
   setdata('')}}>stop now</button>
-</div>
+</div>}
  </div>
  </div>
  
@@ -115,7 +115,7 @@ const generateqr=()=>{
     <div className="flex justify-center item-center mt-10 ">
  
  <QrReader
-   className="border-4 border-red-500 shadow-lg rounded-md w-80"
+   className="border-4 border-red-500 shadow-lg  rounded-md w-80"
           delay={300}
           facingMode={setSelected}
          // style={{width:"300px"}}
