@@ -2,21 +2,10 @@
 
 int main() {    
 
-    int number1, number2, sum;
-
-    
-
+    int n1, n2, sum;
     printf("Enter two integers: ");
-
-    scanf("%d %d", &number1, &number2);
-
-    // calculating sum
-
-    sum = number1 + number2;      
-
-    
-
-    printf("%d + %d = %d", number1, number2, sum);
+    scanf("%d %d", &n1, &n2);     
+    printf("%d + %d = %d", n1, n2, (n1+n2));
 
     return 0;
 
