@@ -1,8 +1,8 @@
 public class Palindrome {
 
-     public static boolean isPalindrome(int i, int j, String A)
+     public static boolean isPalindrome(int i, int j,
+                                       String A)
     {
-        
         if (i >= j) {
             return true;
         }
@@ -19,7 +19,7 @@ public class Palindrome {
  
     public static void main(String[] args)
     {
-        
+       
         String A = "Madam";
         A = A.toLowerCase();
         boolean str = isPalindrome(A);
