@@ -1,16 +1,32 @@
-import java.util.Collections;
-import java.util.ArrayList;
+package com.TrX;
 
-class Main {
+//Program on BinarySearch  #Day1of100DaysOfCoding
+public class BinarySearch {
+
     public static void main(String[] args) {
-        // Creating an ArrayList
-        ArrayList<Integer> numbers = new ArrayList<>();
-        numbers.add(1);
-        numbers.add(2);
-        numbers.add(3);
 
-        // Using binarySearch()
-        int pos = Collections.binarySearch(numbers, 3);
-        System.out.println("The position of 3 is " + pos);
+        int[] arr1 = {1, 2, 4, 5, 6, 7, 8, 9};
+        int key = 8;
+        int last = arr1.length - 1;
+        binarySearch(arr1, 0, last, key);
+    }
+    public static void binarySearch(int[] arr, int first, int last, int key) {
+        int mid = (first+last)/2;
+        while(first<=last){
+            if(arr[mid]==key){
+                System.out.println("Element found at index :"+mid);
+                break;
+            }
+            else if(arr[mid]<key){
+                first=mid+1;
+            }
+            else{
+                last=mid-1;
+            }
+            mid=(first+last)/2;
+        }
+        if(first>last){
+            System.out.println("Element not Found");
+        }
     }
 }
