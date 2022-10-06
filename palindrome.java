@@ -1,23 +1,28 @@
 public class Palindrome {
 
-    public static void main(String[] args) {
-
-        int num = 121, reversedInteger = 0, remainder, originalInteger;
-
-        originalInteger = num;
-
-        // reversed integer is stored in variable 
-        while( num != 0 )
-        {
-            remainder = num % 10;
-            reversedInteger = reversedInteger * 10 + remainder;
-            num  /= 10;
+     public static boolean isPalindrome(int i, int j,
+                                       String A)
+    {
+        if (i >= j) {
+            return true;
         }
-
-        // palindrome if orignalInteger and reversedInteger are equal
-        if (originalInteger == reversedInteger)
-            System.out.println(originalInteger + " is a palindrome.");
-        else
-            System.out.println(originalInteger + " is not a palindrome.");
+        if (A.charAt(i) != A.charAt(j)) {
+            return false;
+        }
+        return isPalindrome(i + 1, j - 1, A);
+    }
+ 
+    public static boolean isPalindrome(String A)
+    {
+        return isPalindrome(0, A.length() - 1, A);
+    }
+ 
+    public static void main(String[] args)
+    {
+       
+        String A = "Madam";
+        A = A.toLowerCase();
+        boolean str = isPalindrome(A);
+        System.out.println(str);
     }
 }
