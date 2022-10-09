@@ -1,0 +1,1080 @@
+@import url("https://fonts.googleapis.com/css?family=K2D");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+/*
+    Hokaze Theme - Version 1.5.3
+        by https://anilist.co/user/Anzu/
+        at https://github.com/AnzuFTNW
+
+    Special Thanks
+        to https://anilist.co/user/cakes/
+        for pointing out a few things and the hover effect on the navbar
+*/
+
+/* Settings */
+:root, .site-theme-dark, .site-theme-contrast {
+  /* General Settings */
+  --hokaze-br: 20px; /* Global Border Radius */
+  --hokaze-pv: 30px; /* Vertical Content Padding */
+  --hokaze-ph: 30px; /* Horizontal Content Padding */
+  --hokaze-bt: 0.3;  /* Content Background Transparency*/
+  --hokaze-nr: 30px; /* Navbar Border Radius */
+  --hokaze-nl: 88%;  /* Navbar Length */
+  --hokaze-sb: 6px;  /* Scrollbar Width */
+  --hokaze-vo: 0.7;  /* Opacity For Various Elements */
+  --hokaze-vs: 0.975;  /* Scale For Various Elements */
+  --hokaze-vb: 2px;  /* Various Avatar Border Thickness */
+  --hokaze-sr: 4px;  /* Social Page Border Thickness */
+  --hokaze-fr: 30px; /* Footer Border Radius */
+  --hokaze-fl: 85%;  /* Footer Length */
+  --hokaze-bl: 3px;  /* Background 'Window' Blur Amount */
+  --hokaze-rs: 1.025; /* Scaling For Load More Button And Activity Input */
+  --hokaze-gs: var(--color-red);    /* Stats Wrap Gradient Start Color */
+  --hokaze-ge: var(--color-red-dim);    /* Stats Wrap Gradient End Color */
+  --hokaze-vt: all 0.5s ease-in-out; /* Transition For Various Elements */
+  --hokaze-li: initial; /* Anilist Logo Source */ 
+  --hokaze-lb: 0px;     /* Anilist Logo Border Thickness */
+  --hokaze-lr: 0px;     /* Anilist Logo Border Radius */
+  --hokaze-ls: 1.2;     /* Anilist Logo Hover Scaling */
+  /* --hokaze-bs: rgba(0, 0, 0, 0.07) 0px 1px 2px, /* Box Shadow */
+               rgba(0, 0, 0, 0.07) 0px 2px 4px,
+               rgba(0, 0, 0, 0.07) 0px 4px 8px,
+               rgba(0, 0, 0, 0.07) 0px 8px 16px;
+               visibility: invisible; */
+  --hokaze-ns: rgba(0, 0, 0, 0.07) 0px 1px 2px, /* Box Shadow For Navbar */
+               rgba(0, 0, 0, 0.07) 0px 2px 4px;
+  
+  /* Avatar Settings */
+  --hokaze-as: 100px;   /* Avatar Size: One Value = Square, Two Values = Rectangle */
+  --hokaze-ap: 50% 20%; /* Inner Avatar Position */
+  --hokaze-ai: 120%;
+  --hokaze-ab: 3px;   /* Avatar Border Thickness */
+  --hokaze-ar: 255px;  /* Avatar Border Radius */
+  --hokaze-at: all 1s ease-in-out; /* Avatar Hover Transition */
+  /*profile change here*/
+  --hokaze-av: url("https://files.catbox.moe/fuyt52.png"); /* Avatar Picture Link */
+  --hokaze-ah: 1.1; /* Avatar Hover Scale */
+  
+  /* Quick Maths - !DON'T TOUCH! */
+  --hokaze-brt: var(--hokaze-br) var(--hokaze-br) 0 0;
+  --hokaze-brb: 0 0 var(--hokaze-br) var(--hokaze-br);
+  --hokaze-bra: var(--hokaze-br) var(--hokaze-br) var(--hokaze-br) var(--hokaze-br);
+  --hokaze-pdh: var(--hokaze-pv) var(--hokaze-ph);
+  --hokaze-maw: calc(1800px - 2 * ( 100px - var(--hokaze-ph)));
+  --hokaze-abs: var(--hokaze-ab) solid rgb(var(--color-foreground));
+  --hokaze-nbr: 0 0 var(--hokaze-nr) var(--hokaze-nr);
+  --hokaze-nbl: calc((100% - var(--hokaze-nl)) / 2);
+  --hokaze-fbr: var(--hokaze-fr) var(--hokaze-fr) 0 0;
+  --hokaze-fbl: calc((100% - var(--hokaze-fl)) / 2);
+  --hokaze-bch: calc(330px - 75px);
+  --hokaze-bcc: calc(var(--hokaze-bch) / 2);
+  --hokaze-bctc: calc(var(--hokaze-bcc) - 36px / 2 );
+  --hokaze-vab: var(--hokaze-vb) solid rgb(var(--color-background));  
+  --hokaze-sab: var(--hokaze-sr) solid rgb(var(--color-background));
+  --hokaze-lob: var(--hokaze-lb) solid rgb(var(--color-red));
+}
+
+/* Light Theme
+:root {
+    --color-background:             217,219,227;
+    --color-foreground:             230,232,240;
+    --color-foreground-grey:        225,227,235;
+    --color-foreground-grey-dark:   217,219,227;
+    --color-text:                   91,87,84;
+    --color-text-light:             106,102,99;
+    --color-text-lighter:           121,117,114;
+    --color-text-bright:            226, 233, 229;
+    --color-red:                   169, 126, 73;
+    --color-red-dim:               191,180,164;
+    --color-green:                  169, 126, 73;
+
+}
+
+Dark Theme
+.site-theme-dark {
+    --color-background:             15, 23, 25;
+    --color-foreground:             28, 36, 38;
+    --color-foreground-grey:        20, 28, 30;
+    --color-foreground-grey-dark:   15, 23, 25;
+    --color-text:                   255, 255, 255; 
+    --color-text-light:             156, 153, 149;
+    --color-text-lighter:           161, 168, 164;
+    --color-text-bright:            176, 183, 179;
+    --color-red:                   169, 126, 73;
+    --color-red-dim:               91, 75, 64;
+    --color-green:                  169, 126, 73;
+} */
+
+/* Code */
+/* Body */
+body {
+    background-image: url("https://cdn.discordapp.com/attachments/896606132179722325/925692287961419796/TgsbjP.png");
+    background-position: 30% 70%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+/* Header */
+#nav {
+  background: rgb(16,16,16) !important;
+  color: rgb(var(--color-text-light)) !important;
+  border-radius: var(--hokaze-nbr);
+  left: var(--hokaze-nbl);
+  width: var(--hokaze-nl);
+  box-shadow: var(--hokaze-bs);
+}
+.hide, .nav.nav-unscoped {
+  top: -60px !important;
+}
+.nav.nav-unscoped.transparent, .nav:hover {
+  top: 0px !important;
+}
+.links > .link:hover {
+  color: rgb(var(--color-red));
+}
+#app > .progress {
+    background-color: rgb(var(--color-red));
+}
+.logo > img {
+    content: var(--hokaze-li);
+    border-radius: var(--hokaze-lr);
+    border: var(--hokaze-lob);
+    transition: var(--hokaze-vt);
+}
+.logo > img:hover {
+    transform: scale(var(--hokaze-ls));
+}
+
+/* Banner */
+.banner {
+  visibility: hidden;
+}
+.banner > .container {
+  visibility: visible;
+  justify-content: center;
+}
+.container > .banner-content {
+  height: var(--hokaze-bch);
+  width: 0;
+  align-items: center;
+  justify-content: center;
+}
+.banner-content > .avatar {
+  width: 0;
+  height: 0;
+  padding: var(--hokaze-as);
+  background: var(--hokaze-av);
+  background-size: var(--hokaze-ai);
+  background-repeat: no-repeat;
+  background-position: var(--hokaze-ap);
+  border-radius: var(--hokaze-ar);
+  border: var(--hokaze-abs);
+  box-shadow: var(--hokaze-bs);
+  transition: var(--hokaze-at);
+  z-index: 100;
+}
+.banner-content > .name {
+  position: absolute;
+  transition: var(--hokaze-vt);
+  transform: translateY(8vh);
+  z-index: 110;
+  opacity: 1;
+  pointer-events: none;
+}
+.banner-content > .mod-badge {
+  position: absolute;
+  bottom: var(--hokaze-bctc);
+  margin: 0;
+  padding: 11.5px 10px;
+  transition: var(--hokaze-at);
+}
+.banner-content > .mod-badge:hover {
+  background: rgba(var(--color-red),1);
+}
+.banner-content > .actions {
+  position: absolute;
+  bottom: var(--hokaze-bctc);
+  margin: 0;
+  padding: 0;
+  transition: var(--hokaze-at);
+}
+.actions > .nav-btn {
+  width: 84.14px;
+  transition: var(--hokaze-at);
+}
+.banner-content:hover > .avatar {
+  border-color: rgb(var(--color-red));
+  transform: scale(var(--hokaze-ah));
+}
+.banner-content:hover > .mod-badge {
+  transform: translateX(-170px);
+}
+.banner-content:hover > .actions {
+  transform: translateX(183px);
+}
+.banner-content:hover > .name {
+  opacity: 0;
+}
+
+/* Container */
+.header-wrap > .nav-wrap {
+  max-width: var(--hokaze-maw);
+  margin: 0 auto;
+  border-radius: var(--hokaze-brt);
+  box-shadow: var(--hokaze-ns);
+  position: relative;
+}
+.nav > .link {
+  position: relative;
+}
+.nav > .link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 2px;
+  width: 0;
+  background: rgb(var(--color-red));
+  transition: all 0.3s ease-in-out;
+}
+.nav > .router-link-active::after {
+  left: 0;
+  width: 100%;
+  background: rgb(var(--color-red-dim));
+}
+.nav > .link:hover::after {
+  left: 0;
+  width: 100%;
+  background: rgb(var(--color-red));
+}
+.content.container {
+  background: rgba(var(--color-foreground-grey-dark),var(--hokaze-bt));
+  max-width: var(--hokaze-maw);
+  padding: var(--hokaze-pdh);
+  border-radius: var(--hokaze-brb);
+  box-shadow: var(--hokaze-bs);
+  backdrop-filter: blur(var(--hokaze-bl));
+}
+
+/* Content - Overview */
+.content > .overview {
+  margin-top: 0;
+}
+.stats-wrap > .content-wrap, .about > .content-wrap, .desktop > .content-wrap, .activity-entry > .wrap, .favourites-wrap > .favourite, .scroller > .load-more, .user-page-unscoped .markdown-editor, .el-textarea__inner, .input {
+  border-radius: var(--hokaze-bra) !important;
+  box-shadow: var(--hokaze-bs);
+  transition: var(--hokaze-vt);
+}
+.history-day:hover {
+  transform: scale(1.2);
+}
+.list-stats:nth-child(1), .list-stats:nth-child(2) {
+  height: calc(121px - 45px);
+}
+.list-stats:nth-child(1):hover, .list-stats:nth-child(2):hover {
+  height: 121px;
+}
+.progress > .bar {
+    background: linear-gradient(270deg,rgb(var(--hokaze-gs)),rgb(var(--hokaze-ge))) !important;
+}
+.genre > .name, .favourite {
+  opacity: var(--hokaze-vo);
+  transform: scale(var(--hokaze-vs));
+  transition: var(--hokaze-vt);
+}
+.percentage {
+  opacity: var(--hokaze-vo);
+}
+.genre > .name:hover, .percentage:hover, .favourite:hover {
+  opacity: 1;
+  transform: scale(1);
+}
+.overview .content-wrap {
+  transform: scale(var(--hokaze-vs));
+}
+.overview .content-wrap:hover {
+  transform: scale(1);
+}
+.activity-entry > .wrap {
+  transition: var(--hokaze-vt);
+  max-height: none /*70px*/;
+}
+.activity-entry:hover .wrap {
+  transform: scale(1.025); 
+  max-height: none /*663px*/; /*  663 560px max height, 28px margin, 70px header, 5px idk? kek */
+}
+.wrap > .text {
+  padding-top: 15px;
+}
+.text > .activity-markdown > .markdown {
+  max-height: none;
+}
+.header > .avatar, .list > .cover {
+  opacity: var(--hokaze-vo);
+  transition: var(--hokaze-vt);
+}
+.wrap:hover .cover {
+  opacity: 1;
+}
+.header > .avatar, .users > .user {
+  opacity: var(--hokaze-vo);
+  transition: var(--hokaze-vt);
+  border-radius: var(--hokaze-ar) !important;
+  border: var(--hokaze-vab);
+}
+.wrap:hover .header > .avatar, .users > .user:hover, .reply:hover .header > .avatar {
+  opacity: 1;
+  border-color: rgb(var(--color-red));
+}
+.header > .name {
+  transition: var(--hokaze-vt);
+}
+.wrap:hover .header > .name {
+  opacity: 1;
+  font-weight: bold;
+}
+.activity-entry, .input, svg:not(:root).svg-inline--fa {
+  transition: var(--hokaze-vt);
+}
+.list .title, .input .el-textarea__inner {
+  opacity: var(--hokaze-vo);
+  transition: var(--hokaze-vt);
+}
+.activity-manga_list:hover, .activity-anime_list:hover {
+  transform: scale(1.025);  
+}
+.activity-manga_list:hover .title, .activity-anime_list:hover .title {
+  opacity: 1;
+  font-weight: bold;
+}
+.input:hover {
+  transform: scale(var(--hokaze-rs));
+}
+.input:hover .el-textarea__inner {
+  opacity: 1;
+}
+svg:not(:root).svg-inline--fa:hover {
+  transform: scale(1.2);
+}
+.scroller > .load-more {
+  margin-top: 0;
+}
+.scroller > .load-more:hover {
+  color: rgb(204, 51, 102);
+  box-shadow: var(--hokaze-bs);
+  transform: scale(var(--hokaze-rs));
+}
+.activity-replies > .reply {
+  border-radius: var(--hokaze-br);
+}
+.reply:hover .header > .name {
+  opacity: 1;
+  font-weight: bold;
+}
+
+/* Content - Anime List / Manga List */
+.content > .medialist {
+  margin-top: 0;
+}
+.filter-group>span:hover {
+  background: rgb(var(--color-foreground));
+  color: rgb(var(--color-red));
+}
+.medialist.table .entry:hover .title a {
+  font-weight: bold;
+}
+
+/* Content - Favorites */
+.favourites {
+  margin-top: 0 !important;
+}
+
+/* Content - Stats */
+.content > .stats {
+  margin-top: 0;
+}
+.filter-group a:hover {
+  background: rgb(var(--color-foreground));
+  color: rgb(var(--color-red));
+}
+
+/* Content - Social */
+.content > .user-social {
+  margin-top: 0;
+}
+.filter-group span:hover {
+  background: rgb(var(--color-foreground));
+  color: rgb(var(--color-red));
+}
+.follow-card {
+  opacity: var(--hokaze-vo);
+  border-radius: var(--hokaze-ar);
+  transition: var(--hokaze-vt);
+}
+.follow-card > .avatar {
+  border: var(--hokaze-sab);
+  border-radius: var(--hokaze-ar) !important;
+  transition: var(--hokaze-vt);
+}
+.follow-card:hover, .follow-card > .avatar:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  border-color: rgb(var(--color-red));
+}
+.follow-card > .name {
+      background: rgba(var(--color-shadow),.4);
+}
+
+/* Content - Reviews */
+.content .review-wrap {
+  margin-top: 0;
+}
+
+/* Footer */
+.wrap > .footer {
+  position: relative;
+  background: rgb(var(--color-foreground));
+  border-radius: var(--hokaze-fbr);
+  left: var(--hokaze-fbl);
+  width: var(--hokaze-fl);
+  box-shadow: var(--hokaze-bs);
+}
+.footer > .container {
+    justify-content: space-between;
+}
+.theme-selector > .dark {
+  background: #000;
+}
+.theme-selector > h2 {
+  color: rgb(var(--color-red));
+}
+a, a:visited {
+    color: rgb(var(--color-text));
+}
+
+/* Sorry Hoh */
+.hohColourPicker, .theme-selector > .contrast, .hohDismiss {
+  display: none;
+}
+.footer .links {
+    margin-left: 0;
+    transform: translate(0px,0px);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+width: var(--hokaze-sb);
+height: var(--hokaze-sb);
+}
+::-webkit-scrollbar-thumb {
+background: rgba(179, 64, 70);
+border-radius: var(--hokaze-br);
+}
+::-webkit-scrollbar-thumb:hover, ::-webkit-scrollbar-thumb:active {
+background: rgb(179, 64, 70);
+}
+body::-webkit-scrollbar-track {
+background: rgb(var(--color-background));
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Dropdown Integration */
+:root, .site-theme-dark, .site-theme-contrast {
+    --color-background-100: var(--color-foreground);
+    --color-background-200: var(--color-background);
+    --color-gray-100: var(--color-foreground);
+    --color-gray-600: var(--color-text-light);
+    --color-gray-700: var(--color-text-light);
+    --color-gray-800: var(--color-red);
+    --color-gray-900: var(--color-red);
+}
+
+/* Fixes For Current Profile */
+.about > .content-wrap {
+  transform: scale(1) !important;
+  max-height: none !important;
+}
+.markdown img {
+  border-radius: 0px;
+}
+.banner-content > .mod-badge {
+  opacity: 0;
+}
+.banner-content > .actions {
+  opacity: 0;
+}
+.banner-content:hover > .mod-badge {
+  transform: translateX(-170px);
+  opacity: 1;
+}
+.banner-content:hover > .actions {
+  transform: translateX(183px);
+  opacity: 1;
+}
+
+/* about sectoin fixed cuz after effects sux */
+.about img[src="https://64.media.tumblr.com/570f4e11222d885f2a29aa03721a41d0/94677bcd5144bb29-54/s540x810/77d4a0d24784404e4017f3bd8bead673abb65e1c.gif"] {
+    border: 3px solid #f7bf63;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+/* changes color of left border */
+
+.activity-message .text {
+  border-left: solid 3px #000;
+}
+
+.activity-text .text {
+  border-left: solid 7px #CC3366;
+}
+
+
+/* add search anilist thing */
+
+.nav .wrap {
+  display: grid;
+  grid-template-columns: 70px auto auto 70px;
+}
+
+.nav .wrap .links {
+  grid-column-start: 3;
+  margin-left: -25px;
+}
+
+.nav .wrap .search {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  padding: 10px;
+  background: rgb(16 16 16);
+  box-shadow: var(--nutella-bs);
+  border-radius: 35px;
+  width: 100%;
+  cursor: text;
+  font-family: "Overpass"
+}
+
+.nav .wrap .search:after {
+  content: "Search AniList";
+  margin-left: 10px;
+  color: #777a9e;
+}
+
+.nav .wrap .user {
+  grid-column-start: 4;
+  grid-row-start: 1;
+}
+
+
+
+.section-header[data-v-09492909]::before {
+  transition: transform .7s ease-in-out;
+  visibility: visible;
+  content:"guptas'";
+  color: #AF4046
+font-weight: bold;
+}
+
+/* changes logo and adds hover */
+
+.logo img {
+  content: url(https://s3.us-east-2.amazonaws.com/stickers-for-discord/mchan-1551291024582-box.png);
+}
+
+.logo:hover {
+  transition: transform 0.69s ease-in-out;
+  transform: scale(1.6);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Adds a gif or image to search button */
+
+.search[data-v-4fbac4e1]:hover svg {
+  background: url(https://c.tenor.com/GLpWclhFs28AAAAi/mine-funny.gif?size=90);
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: #0010FF00;
+  transform: scale(4) translate(55px, 64px) !important;
+}
+
+
+/* hides reviews + submissions */
+
+.nav .link:nth-child(7), .nav .link:nth-child(8) {
+  width: 0;
+  margin: 0;
+  padding: 0;
+  visibility: hidden;
+}
+
+/* NAVBAR ICONS */
+
+.header-wrap .nav-wrap .link {
+  font-size: 1.5rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+  transition: 0.5s;
+  padding: 15px 0px 15px 0px;
+  margin: 0px 30px;
+}
+
+.header-wrap .nav-wrap .link:nth-child(1):before {
+  font-family: "FontAwesome";
+  font-size: 15px;
+  content: "\f015";
+}
+
+.header-wrap .nav-wrap .link:nth-child(2):before {
+  font-family: "FontAwesome";
+  font-size: 15px;
+  content: "\f26c";
+}
+
+.header-wrap .nav-wrap .link:nth-child(3):before {
+  font-family: "FontAwesome";
+  font-size: 15px;
+  content: "\f02d";
+}
+
+.header-wrap .nav-wrap .link:nth-child(4):before {
+  font-family: "FontAwesome";
+  font-size: 15px;
+  content: "\f004";
+}
+
+.header-wrap .nav-wrap .link:nth-child(5):before {
+  font-family: "FontAwesome";
+  font-size: 15px;
+  content: "\f080";
+}
+
+.header-wrap .nav-wrap .link:nth-child(6):before {
+  font-family: "FontAwesome";
+  font-size: 15px;
+  content: "\f27b";
+}
+
+
+
+/* hide about section scrollbar */
+
+.about .content-wrap[data-v-5c30286e]::-webkit-scrollbar {
+  background-color: transparent;
+  width: 4px
+}
+
+.about .content-wrap[data-v-5c30286e]::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.about .content-wrap[data-v-5c30286e]::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+/*╔═════════════╗
+      CUSTOM BADGES
+  ╚═════════════╝*/
+
+.text>.header>.name::after {
+  position: relative;
+  top: -1px;
+  left: 4px;
+  border-radius: 7px;
+  color: rgba(255, 225, 255, 1);
+  padding: 3px 6px;
+  margin-bottom: 3px;
+  margin-right: 16px;
+  transition: .4s;
+  font-size: 1.2rem;
+  transition: .5s;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-name: rainbow;
+  animation-timing-function: ease-in-out;
+  letter-spacing: .03em;
+}
+/*==================================================
+                  People
+==================================================*/
+.text > .header > .name::after, .reply > .header > .name::after {
+     content: 'buds';
+     position: relative;
+     top: -1px;
+     left: 4px;
+     padding: 5px 8px;
+     border-radius: 10px;
+     font-size: 1.2rem;
+     color: #fff;
+     transition: .5s;
+     animation-duration: 10s;
+     animation-iteration-count: infinite;
+     animation-name: rainbow;
+     animation-timing-function: ease-in-out;
+}
+
+/*==================================================
+               Special nicknames
+==================================================*/
+a[href="/user/Dhruvgupta/"]:not(.avatar):not(.user):not(.link):not(.primary-link)::after { content: 'Menhera_lover'; }
+a[href="/user/arsinoe/"]:not(.avatar):not(.user):not(.link):not(.primary-link)::after { content: 'GopiBahu'; }
+a[href="/user/Eloraa/"]:not(.avatar):not(.user):not(.link):not(.primary-link)::after { content: 'Adoptive child'; }
+a[href="/user/Chibicookie/"]:not(.avatar):not(.user):not(.link):not(.primary-link)::after { content: 'Besto friendo'; }
+a[href="/user/SkylarSays/"]:not(.avatar):not(.user):not(.link):not(.primary-link)::after { content: 'King of anilist'; }
+a[href="user/DrBOND007"]:not(.avatar):not(.user):not(.link):not(.primary-link)::after { content: 'My boyfriend<3'; }
+a[href="user/BubbleGumm"]:not(.avatar):not(.user):not(.link):not(.primary-link)::after { content: 'old bl hag '; }
+
+
+/* About me blur */
+.overview[data-v-5c30286e] .content-wrap {
+    background-color: transparent;
+    backdrop-filter: blur(0px);
+    
+}
+
+.nav-wrap[data-v-2431f6d8] {
+    background: rgb(16,16,16);
+    width: 100%;
+}
+
+.wrap[data-v-1bf2cf4e] {
+    background: rgb(16,16,16);
+    border-radius: 4px;
+    font-size: 1.3rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.el-input-group__append, .el-input-group__prepend, .el-input__inner, .el-textarea__inner {
+    background: rgb(16,16,16);
+    border: 0;
+    box-shadow: 0;
+    color: rgb(var(--color-text));
+    outline: 0;
+    transition: .2s;
+}
+
+.markdown-editor {
+    background: rgb(16,16,16);
+    border-radius: 4px;
+    color: rgb(var(--color-text));
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 12px;
+    padding: 12px 20px;
+}
+
+
+a, a:visited {
+    color: rgb(255,255,255);
+}
+
+
+
+/* Navbar text color */
+.nav .link[data-v-2431f6d8] {
+    color: rgb(255,255,255);
+    display: inline-block;
+    margin: 0 10px;
+    padding: 15px;
+}
+
+
+/* About me size */
+.user .overview {
+    grid-template-columns: 600px auto!important;
+}
+
+/* time color */
+.time[data-v-1bf2cf4e] {
+    color: rgb(255,255,255);
+    font-size: 1.1rem;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+}
+
+/* stat color anime */
+.hohMilestones .stat .value {
+    color: rgb(175, 64, 70);
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding-bottom: 8px;
+}
+
+/* stat color manga */
+.stat .value[data-v-815ccddc] {
+    color: rgb(175, 64, 70);
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding-bottom: 8px;
+}
+
+/* anime list black color */
+.medialist.cards .entry-card .title {
+    background: rgba(16,16,16);
+    border-radius: 0 0 3px 3px;
+    bottom: 0;
+    left: 0;
+    padding: 12px;
+    padding-bottom: 35px;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+
+.filter-group .draggable>span[data-v-063397cc], .filter-group>span[data-v-063397cc] {
+    border-radius: 3px;
+    color: rgb(255,255,255);
+    cursor: pointer;
+    display: block;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    padding: 5px 10px;
+    text-transform: capitalize;
+}
+
+/* genres */
+element.style {
+    background: rgb(204, 51, 102);
+    min-width: 25.5565%;
+}
+
+element.style {
+    background: rgb(204, 51, 102);
+}
+
+element.style {
+    color: rgb(204, 51, 102);
+}
+
+element.style {
+    background: rgb(204, 75, 118);
+    min-width: 17.8985%;
+}
+
+element.style {
+    background: rgb(204, 75, 118);
+}
+
+element.style {
+    color: rgb(204, 75, 118);
+}
+
+element.style {
+    background: rgb(204, 120, 148);
+    min-width: 16.8299%;
+}
+
+element.style {
+    background: rgb(204, 120, 148);
+}
+
+element.style {
+    color: rgb(204, 120, 148);
+}
+
+element.style {
+    background: rgb(255, 191, 212);
+    min-width: 13.6242%;
+}
+
+element.style {
+    background: rgb(255, 191, 212);
+}
+
+element.style {
+    color: rgb(255, 191, 212);
+}
+
+element.style {
+    background: rgb(255, 229, 238);
+    min-width: 13.268%;
+}
+
+element.style {
+    background: rgb(255, 229, 238);
+}
+
+element.style {
+    color: rgb(255, 229, 238);
+}
+
+element.style {
+    background: rgb(255, 255, 255);
+    min-width: 12.8228%;
+}
+
+.name[data-v-aedb6876] {
+    background: #673ab7;
+    border-radius: 4px;
+    color: rgb(255,255,255);
+    margin-bottom: 8px;
+    padding: 6px 15px;
+}
+
+/* load more color */
+.load-more[data-v-6f203cf2] {
+    background: rgb(16,16,16);
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Overpass,-apple-system,BlinkMacSystemFont,Segoe UI,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 20px;
+    padding: 14px;
+    text-align: center;
+    transition: .2s;
+}
+
+/* bottom color */
+.wrap > .footer {
+    position: relative;
+    background: rgb(16,16,16);
+    border-radius: var(--hokaze-fbr);
+    left: var(--hokaze-fbl);
+    width: var(--hokaze-fl);
+    box-shadow: var(--hokaze-bs);
+}
+.theme-selector > h2 {
+    color: rgb(175, 64, 70);
+}
+.stat .value[data-v-815ccddc] {
+    color: rgb(175, 64, 70);
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding-bottom: 8px;
+}
+.hohMilestones .stat .value {
+    color: rgb(175, 64, 70);
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding-bottom: 8px;
+}
+.activity-text .text {
+    border-left: solid 7px #AF4046;
+}
+.progress[data-v-815ccddc] {
+    background: rgb(179,64,70);
+    height: 11
+px
+;
+    padding: 0 16.5%;
+    width: 60%;
+}
+.site-theme-dark {
+    --color-foreground: 1,0,0,0.2;
+}
+.header-wrap > .nav-wrap {
+    max-width: var(--hokaze-maw);
+    margin: 0 auto;
+    border-radius: var(--hokaze-brt);
+    box-shadow: var(--hokaze-ns);
+    position: relative;
+    background: rgb(1,0,0);
+  }
+  .text[data-v-77aecf0c] .markdown p:first-of-type {
+     margin-top: 0;
+      font-weight: normal;
+    font-family: "Overpass";
+      color: rgb(255,255,255);
+    font-size: 20px;
+  }
+  .markdown {
+      overflow-wrap: break-word;
+      word-break: break-word;
+      font-weight: normal;
+    font-family: "Overpass";
+      color: rgb(255,255,255);
+    font-size: 20px;
+    .name[data-v-77aecf0c] {
+      color: rgb(var(--color-blue));
+      display: inline-block;
+      font-size: 1.4rem;
+      color: rgb(255,255,255);
+  }
+  .text .activity-markdown[data-v-77aecf0c] {
+      font-size: 1.4rem;
+      line-height: 1.4;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      color: rgb(255,255,255);
+  }
+  .list.small .details[data-v-77aecf0c] {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 1.4;
+      min-height: 70px;
+      color: rgb(255,255,255);
+  }
+}
+.action.likes .button.liked, .like-wrap.thread_comment .button.liked {
+    color: rgb(220,20,60);
+  font-size: 20px;
+}
+.actions[data-v-77aecf0c] {
+    bottom: 12px;
+    color: rgb(220,20,60);
+  font-size: 20px;
+    position: absolute;
+    right: 12px;
+}
+.nav-btn[data-v-1cc2919e] {
+background: rgba(var(--color-red),.8);
+border-radius: 4px;
+color: rgb(var(--color-white));
+cursor: pointer;
+display: inline-block;
+margin-left: 200px;
+padding: 10px 12px;
+text-align: center;
+transition: 4s;
+}
+.hohPinned .action {
+  cursor: pointer;
+  display: inline-block;
+  padding-left: 5px;
+  transition: .2s;
+  display: none;
+}
+
+.hohPinned .text .name {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  margin-left: 12px;
+  vertical-align: top;
+  color: rgb(var(--color-blue));
+  display: inline-block;
+  font-size: 1.4rem;
+  display: none;
+}
+
+.hohPinned .text .avatar {
+  border-radius: 3px;
+  height: 40px;
+  width: 40px;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  display: none;
+}
+
+.hohPinned .time {
+  color: rgb(var(--color-text-lighter));
+  font-size: 1.1rem;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  font-family: Overpass,-apple-system,BlinkMacSystemFont,Segoe UI,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  font-weight: 800;
+  display: none;
+}
+
+.hohPinned .text {
+  padding: 0px 20px 40px 20px;
+}
