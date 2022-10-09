@@ -1,0 +1,29 @@
+#include<conio.h>
+#include<iostream.h>
+main()
+{
+int a,b,c;
+clrscr();
+cout<<"Enter any number";
+cin>>a;
+cout<<"Enter one more number";
+cin>>b;
+cout<<"Enter your choice\n";
+cout<<"press 1 for sum\npress 2 for sub\npress 3 for mul\n\n";
+cin>>c;
+switch(c)
+{
+case 1:
+cout<<a<<"+"<<b<<"="<<a+b;
+break;
+case 2:
+cout<<a<<"-"<<b<<"="<<a-b;
+break;
+case 3:
+cout<<a<<"*"<<b<<"="<<a*b;
+break;
+default;
+cout<<"try again";
+}
+getch();
+}
