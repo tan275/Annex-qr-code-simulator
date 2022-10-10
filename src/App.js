@@ -99,13 +99,13 @@ const generateqr=()=>{
 
  <div className="flex justify-center item-center md:mr-0  mt-10 ">
  <div className="flex " >
- <div className="box px-3 py-1 bg-sky-400 rounded-lg mr-10 font-semibold text-xl shadow-lg  ">
- <button onClick={()=>setstart(true)}>scan now</button> 
+ <div className="box px-3 py-1 bg-sky-400 rounded-lg mr-10 font-semibold text-xl shadow-lg  shadow hover:shadow-xl">
+    <button  onClick={()=>setstart(true)}>scan now</button> 
  </div>
-<div className="box px-3 py-1 bg-sky-400 rounded-lg font-semibold text-xl shadow-lg ">
-<button onClick={()=>{setstart(false)
+{start && <div className="box px-3 py-1 bg-sky-400 rounded-lg font-semibold text-xl shadow-lg shadow hover:shadow-xl">
+    <button onClick={()=>{setstart(false)
   setdata('')}}>stop now</button>
-</div>
+</div>}
  </div>
  </div>
  
@@ -129,7 +129,7 @@ const generateqr=()=>{
 
           <div className="flex justify-center item-center mt-10 ">
 
-<h1 className="text-xl font-medium ">scan result is = <span className="text-2xl font-semibold text-green-500">{data}</span> </h1>
+<h1 className="text-xl font-medium ">scan result is = <a href={data}><span className="text-2xl font-semibold text-green-500">{data}</span> </a></h1>
 
           </div>
 
